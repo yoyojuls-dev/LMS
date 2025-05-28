@@ -1,0 +1,295 @@
+/*
+ * File: DT_bootstrap.css - Themed
+ * Purpose: Styles for DataTables integration with Bootstrap, themed.
+ * Theme Palette:
+ *   Main BG: #FDFBD4
+ *   Accent BG: #090786
+ *   Sub-text: #878672
+ *   Main Font: #545333
+ */
+
+div.dataTables_length label {
+	float: left;
+	text-align: left;
+  color: #545333; /* Main Font Color */
+}
+
+div.dataTables_length select {
+	width: 75px;
+  border: 1px solid #C7C6B2; /* Border from Sub-text, like inputs */
+  background-color: #FFFFFF; /* White BG for select */
+  color: #545333; /* Main Font Color */
+  border-radius: 3px;
+  padding: 2px;
+}
+div.dataTables_length select:focus {
+  border-color: #090786; /* Accent BG for focus */
+  box-shadow: 0 0 5px rgba(9,7,134,0.5);
+}
+
+div.dataTables_filter label {
+	float: right;
+  color: #545333; /* Main Font Color */
+}
+div.dataTables_filter input { /* Search input */
+  border: 1px solid #C7C6B2; /* Border from Sub-text */
+  border-radius: 3px;
+  padding: 4px 6px;
+  background-color: #FFFFFF;
+  color: #545333;
+}
+div.dataTables_filter input:focus {
+  border-color: #090786; /* Accent BG for focus */
+  box-shadow: 0 0 5px rgba(9,7,134,0.5);
+}
+
+
+div.dataTables_info {
+	padding-top: 8px;
+  color: #878672; /* Sub-text color for info text */
+}
+
+/* Pagination controls will largely inherit from the themed bootstrap.css pagination styles */
+div.dataTables_paginate {
+	float: right;
+	margin: 0;
+}
+/* Ensure pagination links within datatables also use the theme */
+div.dataTables_paginate ul > li > a,
+div.dataTables_paginate ul > li > span {
+  color: #090786; /* Link color */
+  background-color: #FFFFFF;
+  border-color: #D1D0B2;
+}
+div.dataTables_paginate ul > li > a:hover,
+div.dataTables_paginate ul > li > a:focus {
+  background-color: #F0EFE2; /* Default button hover */
+  color: #07056A;
+}
+div.dataTables_paginate ul > .active > a,
+div.dataTables_paginate ul > .active > span {
+  color: #FDFBD4; /* Light text on dark active */
+  background-color: #090786; /* Accent BG for active page */
+  border-color: #090786;
+}
+div.dataTables_paginate ul > .disabled > span,
+div.dataTables_paginate ul > .disabled > a,
+div.dataTables_paginate ul > .disabled > a:hover,
+div.dataTables_paginate ul > .disabled > a:focus {
+  color: #A7A692;
+  background-color: transparent;
+  border-color: #D1D0B2;
+}
+
+
+table.table { /* These styles are for the table itself within DataTables wrapper */
+	clear: both;
+	margin-bottom: 6px !important;
+	max-width: none !important;
+  background-color: #FFFFFF; /* White BG for table content area for contrast */
+}
+
+table.table thead th {
+  background-color: #F0EFE2; /* Light grayish khaki for header (like default button) */
+  color: #545333; /* Main Font Color for headers */
+  border-bottom: 2px solid #C7C6B2; /* Border from sub-text */
+  text-shadow: 0 1px 0 #ffffff; /* if BG is light enough */
+}
+
+/* Sorting icons are background images. Colors can't be changed via CSS directly. */
+/* The background of TH cells is set above. */
+table.table thead .sorting,
+table.table thead .sorting_asc,
+table.table thead .sorting_desc,
+table.table thead .sorting_asc_disabled,
+table.table thead .sorting_desc_disabled {
+	cursor: pointer;
+	*cursor: hand;
+}
+
+table.table thead .sorting { background: url('../vendors/datatables/images/sort_both.png') no-repeat center right; }
+table.table thead .sorting_asc { background: url('../vendors/datatables/images/sort_asc.png') no-repeat center right; }
+table.table thead .sorting_desc { background: url('../vendors/datatables/images/sort_desc.png') no-repeat center right; }
+
+table.table thead .sorting_asc_disabled { background: url('../vendors/datatables/images/sort_asc_disabled.png') no-repeat center right; }
+table.table thead .sorting_desc_disabled { background: url('../vendors/datatables/images/sort_desc_disabled.png') no-repeat center right; }
+
+table.dataTable th:active {
+	outline: none;
+}
+
+/* Scrolling */
+div.dataTables_scrollHead table {
+	margin-bottom: 0 !important;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+div.dataTables_scrollHead table thead th { /* Ensure scroll head matches main table head */
+  background-color: #F0EFE2;
+  color: #545333;
+  border-bottom: 2px solid #C7C6B2;
+}
+
+div.dataTables_scrollHead table thead tr:last-child th:first-child,
+div.dataTables_scrollHead table thead tr:last-child td:first-child {
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+
+div.dataTables_scrollBody table {
+	border-top: none;
+	margin-bottom: 0 !important;
+}
+div.dataTables_scrollBody table tbody tr:hover > td,
+div.dataTables_scrollBody table tbody tr:hover > th {
+  background-color: #E9E8D8; /* Consistent hover from bootstrap.css table theming */
+  color: #545333;
+}
+
+
+div.dataTables_scrollBody tbody tr:first-child th,
+div.dataTables_scrollBody tbody tr:first-child td {
+	border-top: none;
+}
+
+div.dataTables_scrollFoot table {
+	border-top: none;
+}
+div.dataTables_scrollFoot table tfoot th { /* Style for footer if used in scrolling */
+  background-color: #F0EFE2; /* Consistent with header */
+  color: #545333;
+  border-top: 1px solid #C7C6B2;
+}
+
+
+/*
+ * TableTools styles
+ */
+.table tbody tr.active td,
+.table tbody tr.active th {
+	background-color: #090786; /* Accent BG for active/selected row */
+	color: #FDFBD4; /* Light text */
+}
+
+.table tbody tr.active:hover td,
+.table tbody tr.active:hover th {
+	background-color: #07056A !important; /* Darker Accent BG on hover */
+}
+
+.table-striped tbody tr.active:nth-child(odd) td,
+.table-striped tbody tr.active:nth-child(odd) th {
+	background-color: #1A18A0; /* Slightly lighter/different Accent BG for striped active */
+}
+
+table.DTTT_selectable tbody tr {
+	cursor: pointer;
+	*cursor: hand;
+}
+
+/* TableTools Buttons - Inherit from themed .btn in bootstrap.css */
+div.DTTT .btn {
+	color: #545333 !important; /* Ensure main font color */
+	font-size: 12px;
+  /* background/border will come from .btn theming in bootstrap.css */
+}
+div.DTTT .btn:hover {
+	text-decoration: none !important;
+  /* hover background/border from .btn:hover in bootstrap.css */
+}
+
+
+ul.DTTT_dropdown.dropdown-menu a {
+	color: #545333 !important; /* Main font color for dropdown items */
+}
+
+ul.DTTT_dropdown.dropdown-menu li:hover a {
+	background-color: #090786; /* Accent BG for hover */
+	color: #FDFBD4 !important; /* Light text on hover */
+  /* background-image: none; Remove gradient if any */
+}
+
+/* TableTools information display */
+div.DTTT_print_info.modal {
+	height: auto;
+  min-height: 150px;
+	margin-top: -75px;
+	text-align: center;
+  background-color: #FDFBD4; /* Main BG for print info modal */
+  border: 1px solid #C7C6B2; /* Default border */
+  color: #545333; /* Main font */
+}
+
+div.DTTT_print_info h6 {
+	font-weight: normal;
+	font-size: 28px;
+	line-height: 28px;
+	margin: 1em;
+  color: #090786; /* Accent color for heading */
+}
+
+div.DTTT_print_info p {
+	font-size: 14px;
+	line-height: 20px;
+  color: #545333; /* Main font */
+}
+
+.dataTables_wrapper .row { /* Ensure no negative margin from bootstrap conflicts */
+	margin-left:0px;
+}
+
+/*
+ * FixedColumns styles
+ */
+div.DTFC_LeftHeadWrapper table,
+div.DTFC_LeftFootWrapper table {
+	background-color: #F7F5E3; /* Consistent with scrollHead, slightly lighter than main table head */
+  border-right: 1px solid #C7C6B2; /* Separator line */
+}
+/* Fixed columns body rows need to match main table striping if used */
+table.DTFC_Cloned tr.even {
+	background-color: #FFFFFF; /* Match non-striped main table */
+}
+table.DTFC_Cloned tr.odd {
+  background-color: #F7F5E3; /* Match striped main table */
+}
+
+
+div.DTFC_LeftHeadWrapper table {
+	margin-bottom: 0 !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+div.DTFC_LeftHeadWrapper table thead th {
+  background-color: #F0EFE2; /* Match other headers */
+  color: #545333;
+  border-bottom: 2px solid #C7C6B2;
+}
+
+div.DTFC_LeftHeadWrapper table thead tr:last-child th:first-child,
+div.DTFC_LeftHeadWrapper table thead tr:last-child td:first-child {
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+
+div.DTFC_LeftBodyWrapper table {
+	border-top: none;
+	margin-bottom: 0 !important;
+  background-color: #FFFFFF; /* Ensure body background is consistent for fixed columns */
+  border-right: 1px solid #C7C6B2;
+}
+
+div.DTFC_LeftBodyWrapper tbody tr:first-child th,
+div.DTFC_LeftBodyWrapper tbody tr:first-child td {
+	border-top: none;
+}
+
+div.DTFC_LeftFootWrapper table {
+	border-top: none;
+  border-right: 1px solid #C7C6B2;
+}
+div.DTFC_LeftFootWrapper table tfoot th {
+  background-color: #F0EFE2; /* Match other footers */
+  color: #545333;
+  border-top: 1px solid #C7C6B2;
+}

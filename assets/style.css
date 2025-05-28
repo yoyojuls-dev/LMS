@@ -1,0 +1,115 @@
+/*
+  File: style.css - Themed (Gallery Styles)
+  Description: Styles likely for an image gallery component.
+  Themed with the palette:
+  Main BG: #FDFBD4
+  Accent BG: #090786
+  Sub-text: #878672
+  Main Font: #545333
+*/
+
+.da-thumbs {
+  float: left; /* Layout */
+  list-style: none outside none;
+	margin: 0;
+  padding: 0;
+  position: relative;
+  /* width: 990px; /* Consider making this responsive or 100% if not already handled */
+}
+.da-thumbs li {
+	float: left; /* Layout */
+	margin: 5px;
+	background: #F7F5E3; /* Lighter version of Main BG for list items */
+	padding: 5px; /* Increased padding for better visual separation */
+	position: relative;
+	box-shadow: 0 2px 5px rgba(84, 83, 51, 0.15); /* Softer shadow using Main Font color as base */
+  border: 1px solid #E9E8D8; /* Border derived from li background */
+  border-radius: 4px; /* Rounded corners */
+}
+.da-thumbs li a,
+.da-thumbs li a img {
+	display: block;
+	position: relative;
+  border-radius: 2px; /* Slight rounding for the image/link area */
+}
+.da-thumbs li a {
+	overflow: hidden;
+}
+
+/* Overlay for the hover effect */
+.da-thumbs li a div {
+	position: absolute;
+	background: rgba(9, 7, 134, 0.8); /* Semi-transparent Accent BG overlay */
+	width: 100%;
+	height: 100%;
+}
+.da-thumbs li a div.da-animate {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+/* Initial state classes for animations - no theme change needed here */
+.da-slideFromTop {
+	left: 0px;
+	top: -100%;
+}
+.da-slideFromBottom {
+	left: 0px;
+	top: 100%;
+}
+.da-slideFromLeft {
+	top: 0px;
+	left: -100%;
+}
+.da-slideFromRight {
+	top: 0px;
+	left: 100%;
+}
+
+/* Final state classes for animations - no theme change needed here */
+.da-slideTop {
+	top: 0px;
+}
+.da-slideLeft {
+	left: 0px;
+}
+
+/* Text styling within the overlay */
+.da-thumbs li a div span {
+  text-align:center;
+	display: block;
+	padding: 10px 0;
+	margin: 30px 15px 15px 15px; /* Adjusted margins for potentially smaller text block */
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #FDFBD4; /* Light text (Main BG) on dark overlay */
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.4); /* Keep shadow for contrast */
+	border-bottom: 1px solid rgba(253, 251, 212, 0.6); /* Light border using Main BG color */
+	box-shadow: 0 1px 0 rgba(0,0,0,0.15), 0 -8px 0 rgba(253, 251, 212, 0.2); /* Adjusted shadow for contrast */
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Styling for .class and .subject text elements (assuming these are captions below thumbnails) */
+.class {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important; /* Standard, readable font */
+  font-weight: bold;
+  text-align: center;
+  color: #090786; /* Accent BG color for class name for emphasis */
+  font-size: 1.1em;
+  padding: 8px 0 2px 0; /* Adjusted padding */
+  line-height: 1.2;
+}
+.subject {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  font-weight: normal; /* Making subject less prominent than class */
+  text-align: center;
+	margin-top: 0px; /* Adjusted from -10px for better flow */
+  color: #878672; /* Sub-text color for subject */
+  font-size: 0.95em;
+  padding-bottom: 5px;
+  line-height: 1.2;
+}

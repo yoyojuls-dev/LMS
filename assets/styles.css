@@ -1,0 +1,315 @@
+/*
+  File: styles.css - Themed (General Site Styles)
+  Description: General custom styles for site layout and components.
+  Themed with the palette:
+  Main BG: #FDFBD4
+  Accent BG: #090786
+  Sub-text: #878672
+  Main Font: #545333
+*/
+
+/** Home Page (if these styles apply globally or to inner pages) **/
+body {
+	padding-top: 60px; /* Assuming fixed navbar */
+	padding-bottom: 40px;
+	background-color: #FDFBD4; /* Main BG Color */
+  color: #545333; /* Default text color: Main Font */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* A common default */
+}
+
+/** Login Page specific styles should ideally be in a separate file like index.css or login.css
+    If #login styles here are for a modal or section within a themed page, they'll adapt.
+**/
+#login { /* Assuming this is a section/modal within a themed page */
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#login .form-signin {
+    max-width: 330px;
+    padding: 25px 30px 30px;
+    margin: 0 auto 20px;
+    background-color: #F7F5E3; /* Lighter Main BG for forms on main BG */
+    border: 1px solid #E9E8D8; /* Border derived from form BG */
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    -webkit-box-shadow: 0 4px 10px rgba(84, 83, 51, 0.1); /* Shadow with Main Font color */
+       -moz-box-shadow: 0 4px 10px rgba(84, 83, 51, 0.1);
+            box-shadow: 0 4px 10px rgba(84, 83, 51, 0.1);
+}
+#login .form-signin .form-signin-heading {
+    margin-bottom: 15px;
+    color: #878672; /* Accent BG color for form heading */
+    text-align: center;
+}
+#login .form-signin .checkbox {
+    font-weight: normal;
+    color: #545333; /* Main Font Color for checkbox label */
+    text-align: left; /* Usually better for checkboxes */
+}
+#login .form-signin input[type="text"],
+#login .form-signin input[type="password"] {
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #C7C6B2; /* Input border based on Sub-text */
+    background-color: #FFFFFF; /* White input fields for clarity */
+    color: #545333;
+}
+#login .form-signin input[type="text"]:focus,
+#login .form-signin input[type="password"]:focus {
+    border-color: #878672; /* Accent BG for focus */
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(135,134,114, 0.6);
+}
+
+/** 2 level sub menu (assuming this is part of the main navbar) **/
+.navbar .dropdown-menu-with-subs .sub-menu { /* Ensure specificity if it's inside a .navbar */
+  left: 100%;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  margin-top: -1px; /* Original */
+  background-color: #FFFFFF; /* White BG for sub-menu, pops against dark navbar */
+  border: 1px solid #878672; /* Darker Accent BG for border */
+  border-radius: 0 6px 6px 6px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  min-width: 160px; /* Ensure it has a width */
+}
+
+.navbar .dropdown-menu-with-subs li:hover .sub-menu {
+  visibility: visible;
+  display: block;
+}
+.navbar .dropdown-menu-with-subs .sub-menu > li > a {
+  color: #545333; /* Main font for sub-menu links */
+  padding: 5px 15px; /* Consistent padding */
+}
+.navbar .dropdown-menu-with-subs .sub-menu > li > a:hover {
+  background-color: #878672; /* Accent BG for hover */
+  color: #FDFBD4; /* Light text on hover */
+}
+
+
+.navbar .sub-menu:before { /* Arrow for submenu on dark navbar */
+  border-bottom: 7px solid transparent;
+  border-left: none;
+  border-right: 7px solid #878672; /* Match sub-menu border */
+  border-top: 7px solid transparent;
+  left: -7px; /* Original */
+  top: 10px; /* Original */
+}
+.navbar .sub-menu:after { /* Inner part of arrow */
+  border-top: 6px solid transparent;
+  border-left: none;
+  border-right: 6px solid #FFFFFF; /* Match sub-menu BG */
+  border-bottom: 6px solid transparent;
+  left: -6px; /* Adjusted to align with :before */
+  top: 11px; /* Original */
+}
+
+/** Global **/
+#content {
+  margin-left:0px; /* Default, can be changed by sidebar JS */
+  padding: 20px; /* Increased padding */
+}
+.hide-sidebar, .show-sidebar {
+  cursor: pointer;
+  color: #878672; /* Accent BG color for these controls */
+  padding: 5px;
+  display: inline-block;
+}
+.hide-sidebar:hover, .show-sidebar:hover {
+  color: #878672; /* Darker Accent */
+  text-decoration: none;
+}
+.padd-bottom {
+  margin-bottom: 10px; /* Increased */
+}
+.breadcrumb {
+	margin: 0 0 20px; /* More bottom margin for separation */
+	padding: 10px 0px; /* Keep padding */
+	background-color: transparent;
+  border-bottom: 1px solid #E9E8D8; /* Subtle separator derived from Main BG */
+}
+.breadcrumb > li a {
+  color: #878672; /* Link color */
+}
+.breadcrumb > li a:hover {
+  color: #6a6957; /* Darker link color */
+}
+.breadcrumb > .active {
+  color: #545333; /* Main font color for active breadcrumb */
+}
+.breadcrumb > li {
+  color: #878672; /* Sub-text for non-link breadcrumb items */
+}
+.breadcrumb > li > .divider {
+  color: #B7B6A2; /* Lighter sub-text for divider */
+}
+
+
+.block {
+	border: 1px solid #E0DFD2; /* Border derived from a lighter main BG */
+	background: #FFFFFF; /* White BG for content blocks for contrast */
+	margin: 1.5em 0em; /* More margin */
+	border-top: none; /* Original style */
+  border-radius: 6px;
+	-webkit-box-shadow: 0 3px 8px rgba(84, 83, 51, 0.08); /* Softer shadow with Main Font color */
+	-moz-box-shadow:    0 3px 8px rgba(84, 83, 51, 0.08);
+	box-shadow:         0 3px 8px rgba(84, 83, 51, 0.08);
+}
+
+.block-content {
+	margin: 20px; /* Increased margin */
+	min-height: .25em;
+  color: #545333; /* Main Font Color for content within blocks */
+}
+
+.block-header {
+	margin-bottom: 0px;
+	border-right: none;
+	border-left: none;
+	-webkit-border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0;
+  background-color: #878672; /* Accent BG for header */
+  color: #FDFBD4; /* Light text for header */
+  padding: 12px 20px; /* Adjusted padding */
+  border-bottom: 1px solid #878672; /* Darker Accent BG for separator */
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2); /* Shadow for text on dark bg */
+}
+.block-header div {
+	padding-top: 0;
+}
+.block-header h1, .block-header h2, .block-header h3, .block-header h4, .block-header h5, .block-header h6 {
+  color: #FDFBD4; /* Ensure header text is light */
+  margin: 0;
+  line-height: 1.2; /* Adjust line height for headings */
+}
+
+
+.easyPieChart { /* Style for the chart container itself */
+	margin: 10px auto; /* Adjusted margin */
+  /* Colors for pie chart are set via JS options, but can set track color */
+  /* Example: canvas { border: 1px solid #E9E8D8; } */
+}
+
+.chart-bottom-heading {
+	margin-top: 15px;
+	text-align: center;
+  color: #878672; /* Sub-text color for chart headings */
+  font-size: 0.9em;
+}
+.chart-bottom-heading span { /* If there's a specific span inside */
+    font-weight: bold;
+    color: #545333; /* Main Font color for emphasized part */
+}
+
+
+/** Side Bar **/
+.bs-docs-sidenav { /* Main sidebar container */
+  max-width: 228px; /* Original */
+  margin: 20px 0 0;
+  padding: 0;
+  background-color: #F7F5E3; /* Lighter Main BG for sidebar */
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 1px 4px rgba(84, 83, 51, 0.08); /* Main Font based shadow */
+     -moz-box-shadow: 0 1px 4px rgba(84, 83, 51, 0.08);
+          box-shadow: 0 1px 4px rgba(84, 83, 51, 0.08);
+  border: 1px solid #E0DFD2; /* Border derived from its BG */
+}
+.bs-docs-sidenav > li > a {
+  display: block;
+  margin: 0 0 -1px;
+  padding: 10px 15px; /* Increased padding */
+  border: 1px solid #E0DFD2;
+  color: #878672; /* Accent BG color for sidebar links */
+  font-weight: 500; /* Slightly bolder */
+}
+.bs-docs-sidenav > li:first-child > a {
+  -webkit-border-radius: 5px 5px 0 0; /* Match parent radius top */
+     -moz-border-radius: 5px 5px 0 0;
+          border-radius: 5px 5px 0 0;
+}
+.bs-docs-sidenav > li:last-child > a {
+  -webkit-border-radius: 0 0 5px 5px; /* Match parent radius bottom */
+     -moz-border-radius: 0 0 5px 5px;
+          border-radius: 0 0 5px 5px;
+}
+.bs-docs-sidenav > .active > a { /* Active sidebar item */
+  position: relative;
+  z-index: 2;
+  padding: 11px 16px; /* Slightly more padding for active */
+  border: 0;
+  color: #FDFBD4; /* Light text (Main BG) for active item */
+  text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+  background-color: #878672; /* Accent BG for active */
+  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.25);
+     -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,.25);
+          box-shadow: inset 0 1px 3px rgba(0,0,0,.25);
+}
+/* Chevrons */
+.bs-docs-sidenav .icon-chevron-right {
+  float: right;
+  margin-top: 2px;
+  margin-right: -6px;
+  opacity: .5; /* Increased opacity */
+  color: #878672; /* Accent BG color for chevron */
+}
+.bs-docs-sidenav > li > a:hover {
+  background-color: #E9E8D8; /* Darker shade of sidebar BG for hover */
+  color: #858472; /* Darker Accent BG for text */
+  text-decoration: none;
+}
+.bs-docs-sidenav a:hover .icon-chevron-right {
+  opacity: .8;
+  color: #696856; /* Darker Accent on hover */
+}
+.bs-docs-sidenav .active .icon-chevron-right,
+.bs-docs-sidenav .active a:hover .icon-chevron-right {
+  opacity: 1;
+  color: #FDFBD4; /* Light color (Main BG) for chevron on active item */
+}
+.bs-docs-sidenav.affix {
+  top: 40px; /* Layout */
+}
+.bs-docs-sidenav.affix-bottom {
+  position: absolute; /* Layout */
+  top: auto;
+  bottom: 270px;
+}
+
+/* Icons display list (if used on inner pages)
+------------------------- */
+.the-icons {
+  margin-left: 0;
+  list-style: none;
+  padding: 15px;
+  background-color: #FFFFFF; /* White background for icon list container */
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(84,83,51,0.1); /* Main Font based shadow */
+  border: 1px solid #E0DFD2;
+}
+.the-icons li {
+  float: left;
+  width: 25%;
+  line-height: 25px;
+  padding: 5px 0;
+  color: #545333; /* Main Font Color for text */
+}
+.the-icons i { /* The icon itself */
+  color: #878672; /* Accent BG color for icons */
+  margin-right: 8px; /* More space */
+  vertical-align: middle; /* Better alignment */
+}
+.the-icons li:hover { /* Hover for the list item containing icon */
+  background-color: #F7F5E3; /* Light Main BG for hover */
+}
+.the-icons li:hover i {
+  color: #69695a; /* Darker Accent on hover */
+}
